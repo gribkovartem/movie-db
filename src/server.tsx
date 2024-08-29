@@ -1,7 +1,6 @@
 import React from "react";
 import { renderToString } from "react-dom/server";
 import express from "express";
-import path from "path";
 import App from "./App";
 
 const app = express();
