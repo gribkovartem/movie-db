@@ -20,13 +20,13 @@ app.get("/", (req, res) => {
     </head>
     <body>
       <div id="root">${appContent}</div>
-      <script src="bundle.js"></script>
+      <script src="/bundle.js"></script>
     </body>
     </html>
   `);
 });
 
-app.use(express.static(path.resolve(__dirname, ".")));
+app.use(express.static("public"));
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
