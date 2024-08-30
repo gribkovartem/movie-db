@@ -1,9 +1,11 @@
+const path = require('path');
+
 module.exports = {
   mode: 'development',
   module: {
     rules: [
       {
-        test: /\.(?:tsx)$/,
+        test: /\.(?:tsx|ts)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -12,6 +14,6 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
 };

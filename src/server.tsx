@@ -1,13 +1,15 @@
 import React from "react";
 import { renderToString } from "react-dom/server";
 import express from "express";
+import { getMovies } from "api/movie";
 import App from "./App";
 
 const app = express();
 const port = 3000;
 
-app.get("/", (req, res) => {
-  const appContent = renderToString(<App />);
+app.get("/", async (req, res) => {
+  const movies = await getMovies();
+  const appContent = renderToString(<App movies={movies} />);
 
   res.type("text/html");
   res.send(`
