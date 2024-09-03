@@ -1,0 +1,26 @@
+.root {
+  position: relative;
+  max-width: 11.25rem;
+}
+
+.poster {
+  width: 11.25rem;
+}
+
+.rating {
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+  background: #fff;
+  padding: 0.2rem;
+  border-radius: 0.3rem;
+}
+
+.title {
+  font-size: 1rem;
+}
+
+.hint {
+  font-size: 0.75rem;
+  color: #454545;
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import { MoviesPage } from "pages/Movies";
 import { Movie } from "types/movie";
 
 interface Props {
@@ -6,14 +7,7 @@ interface Props {
 }
 
 const App = ({ movies }: Props) => {
-  return (
-    <>
-      <h1>Movies:</h1>
-      {movies.map((movie) => (
-        <div key={movie.id}>{movie.title}</div>
-      ))}
-    </>
-  );
+  return <MoviesPage movies={movies} />;
 };
 
 export default App;

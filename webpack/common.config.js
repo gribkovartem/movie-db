@@ -1,5 +1,3 @@
-const path = require('path');
-
 module.exports = {
   mode: 'development',
   module: {
@@ -10,10 +8,14 @@ module.exports = {
         use: {
           loader: 'babel-loader',
         }
+      },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
       }
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx']
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.css']
   },
 };

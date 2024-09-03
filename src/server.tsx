@@ -17,10 +17,15 @@ app.get("/", async (req, res) => {
     <html lang="en">
     <head>
       <meta charset="UTF-8">
-      <title>React SSR with Client-Side Hydration</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Movie DB</title>
+      <link rel="stylesheet" href="/main.css">
     </head>
     <body>
       <div id="root">${appContent}</div>
+      <script id="server-data">window.serverData = ${JSON.stringify(
+        movies
+      )}</script>
       <script src="/bundle.js"></script>
     </body>
     </html>

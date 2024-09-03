@@ -4,7 +4,9 @@
     ["module-resolver", {
       "alias": {
         "api": "./src/api",
-        "types": "./src/types"
+        "types": "./src/types",
+        "pages": "./src/pages",
+        "components": "./src/components"
       }
     }]
   ],
