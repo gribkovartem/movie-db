@@ -1,0 +1,22 @@
+name: Actions
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:      
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - run: npm ci
+      - run: npm run lint
+  build-images:
+    runs-on: ubuntu-latest
+    steps:      
+      - uses: actions/checkout@v3
+      - uses: docker-practice/actions-setup-docker@master
+        timeout-minutes: 12
+      - run: docker version
