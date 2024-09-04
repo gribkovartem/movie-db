@@ -1,0 +1,16 @@
+services:
+  movie-db:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.node
+    ports:
+      - '3000:3000'
+  movie-db-proxy:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.nginx
+    depends_on:
+      - movie-db
+    ports:
+      - '80:8000'
+    restart: always

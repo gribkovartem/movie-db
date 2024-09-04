@@ -10,7 +10,7 @@ export function getBaseHTML(
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Movie DB</title>
-      <link rel="stylesheet" href="/main.css">
+      <link rel="stylesheet" href="/public/main.css" type="text/css">
     </head>
     <body>
       <div id="root">${appContent}</div>
@@ -19,7 +19,7 @@ export function getBaseHTML(
           ? `<script id="server-data">window.serverData = { path: "${serverData.path}", data: ${serverData.data} };</script>`
           : ""
       }
-      <script src="/bundle.js"></script>
+      <script src="/public/bundle.js"></script>
     </body>
     </html>`;
 }
