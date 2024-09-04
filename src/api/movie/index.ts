@@ -7,3 +7,7 @@ export async function getMovies(limit?: number) {
     limit ? { limit: String(limit) } : undefined
   );
 }
+
+export async function getMovie(id: number) {
+  return request<Movie>(`/movies/${id}`);
+}

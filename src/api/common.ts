@@ -5,11 +5,17 @@ export async function request<T>(
   queryParams?: Record<string, string>
 ) {
   const params = new URLSearchParams(queryParams).toString();
-  const response = await fetch(`${API_HOST}${BASE_URL}${path}?${params}`);
+  const response = await fetch(
+    params
+      ? `${API_HOST}${BASE_URL}${path}?${params}`
+      : `${API_HOST}${BASE_URL}${path}`
+  );
 
   if (response.ok) {
     return (await response.json()) as Promise<T>;
   } else {
-    throw new Error(`Failed with status: ${response.status}`);
+    throw new Error(
+      `Request to ${response.url} failed with status: ${response.status}`
+    );
   }
 }
