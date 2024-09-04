@@ -1,16 +1,18 @@
 services:
-  movie-db:
+  node:
+    image: ghcr.io/gribkovartem/movie-db
     build:
       context: .
       dockerfile: ./Dockerfile.node
     ports:
       - '3000:3000'
-  movie-db-proxy:
+  proxy:
+    image: ghcr.io/gribkovartem/movie-db-proxy
     build:
       context: .
       dockerfile: ./Dockerfile.nginx
     depends_on:
-      - movie-db
+      - node
     ports:
       - '80:8000'
     restart: always
