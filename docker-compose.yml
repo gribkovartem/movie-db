@@ -1,13 +1,13 @@
 services:
   node:
-    image: ghcr.io/gribkovartem/movie-db
+    image: ghcr.io/gribkovartem/movie-db/node
     build:
       context: .
       dockerfile: ./Dockerfile.node
     ports:
       - '3000:3000'
   proxy:
-    image: ghcr.io/gribkovartem/movie-db-proxy
+    image: ghcr.io/gribkovartem/movie-db/proxy
     build:
       context: .
       dockerfile: ./Dockerfile.nginx
