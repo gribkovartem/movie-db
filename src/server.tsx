@@ -12,25 +12,6 @@ const app = express();
 const port = 3000;
 
 app.get("/", async (req, res) => {
-  res.type("text/html");
-  res.send(
-    `<!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Movie DB</title>
-      <link rel="stylesheet" href="/public/main.css" type="text/css">
-    </head>
-    <body>
-      <h1>Test! It Works!</h1>
-      <script src="/public/bundle.js"></script>
-    </body>
-    </html>`
-  );
-});
-
-app.get("/movies", async (req, res) => {
   const movies = await getMovies();
   const appContent = renderToString(
     <StaticRouter location={req.url}>
