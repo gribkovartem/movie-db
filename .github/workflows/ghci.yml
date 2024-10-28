@@ -1,4 +1,4 @@
-name: Actions
+name: CI/CD for movie-db project
 run-name: ${{ github.actor }} is running the pipeline
 
 on:
